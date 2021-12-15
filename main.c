@@ -41,7 +41,10 @@ int main()
    }
    txt[i]='\0';
 
-   // WordGimatry(word,txt,strlen(word),strlen(txt));
-   // atbash(word,txt,strlen(word),strlen(txt));
+   printf("Gematria Sequences: ");
+   WordGimatry(word,txt,strlen(word),strlen(txt));
+   printf("Atbash Sequences: ");
+   atbash(word,txt,strlen(word),strlen(txt));
+   printf("Anagram Sequences: ");
    permetation(word,txt,strlen(word),strlen(txt));
 }

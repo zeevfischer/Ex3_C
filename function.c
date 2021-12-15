@@ -196,7 +196,6 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
 {
     char toPrint[1024];
     int index;
-
     char txt_copy[sizeOfTxt+1];
     char word_copy[sizeOfWord+1];
     char *temp=txt;
@@ -205,14 +204,14 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         txt_copy[k]=*temp;
         temp++;
     }
-    txt_copy[sizeOfTxt+1]='\0';
+    txt_copy[sizeOfTxt]='\0';
     temp=word;
     for(int k = 0; k < sizeOfWord; k++)
     {
         word_copy[k]=*temp;
         temp++;
     }
-    word_copy[sizeOfWord+1]='\0';
+    word_copy[sizeOfWord]='\0';
     //location = Case(char) upper case is after lower so a=0 A=26
     // value amount
     temp=word;
@@ -236,8 +235,8 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         }
         temp++;
     }
-    int k=0;
-    k++;
+    int kklsed=0;
+    kklsed++;
     /////////////////////////////////////
     bool res =true;
     for (int i = 0; i < strlen(txt_copy)-strlen(word_copy); i++)
@@ -249,6 +248,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             {
                 count_letter_temp[i]=0;
             }
+            //enter temp string to int arr
             for(int j = i; j < i + strlen(word_copy); j++)
             {
                 if(Case(txt_copy[j]) != 0)
@@ -263,6 +263,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                     }
                 }
             }
+            // check
             for(int j =0 ;j < 52;j++)
             {
                 if(count_letter[j] != count_letter_temp[j])
@@ -283,6 +284,6 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
         }
     }
-    toPrint[index]='\0';
+    toPrint[index] = '\0';
     printf("%s\n",toPrint);
 }
