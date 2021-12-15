@@ -125,6 +125,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     temp = txt;
     int index = 0;
     int last = 0;
+    bool try =false;
     for(int i = 0; i < sizeOfTxt; i++)
     {
         for(int j = 0; j < sizeOfWord; j++)
@@ -134,9 +135,15 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 toPrint[index] = *temp;
                 index++;
                 temp++;
+                try =true;
             }
             else
             {
+                if(try)
+                {
+                    txt++;
+                    temp=txt;
+                }
                 index=last;
                 break;
             }
@@ -145,6 +152,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 toPrint[index]='~';
                 index++;
                 last = index;
+                try=false;
             }
         }
         for(int j2 = 0; j2 < sizeOfWord; j2++)
@@ -154,9 +162,15 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 toPrint[index] = *temp;
                 index++;
                 temp++;
+                try =true;
             }
             else
             {
+                if(try)
+                {
+                    txt++;
+                    temp=txt;
+                }
                 index=last;
                 break;
             }
@@ -165,11 +179,109 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 toPrint[index]='~';
                 index++;
                 last = index;
+                try=false;
             }
         }
         index=last;
         txt++;
         temp=txt;
+        try=false;
+
+    }
+    toPrint[index]='\0';
+    printf("%s\n",toPrint);
+}
+// isupper('A')==256
+void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
+{
+    char toPrint[1024];
+    int index;
+
+    char txt_copy[sizeOfTxt+1];
+    char word_copy[sizeOfWord+1];
+    char *temp=txt;
+    for(int k = 0; k < sizeOfTxt; k++)
+    {
+        txt_copy[k]=*temp;
+        temp++;
+    }
+    txt_copy[sizeOfTxt+1]='\0';
+    temp=word;
+    for(int k = 0; k < sizeOfWord; k++)
+    {
+        word_copy[k]=*temp;
+        temp++;
+    }
+    word_copy[sizeOfWord+1]='\0';
+    //location = Case(char) upper case is after lower so a=0 A=26
+    // value amount
+    temp=word;
+    int count_letter[52];
+    int count_letter_temp[52];
+    for(int i =0;i<52;i++)
+    {
+        count_letter[i]=0;
+        count_letter_temp[i]=0;
+    }
+    //////////////////////////////
+    for (int i = 0; i < sizeOfWord; i++)
+    {
+        if(isupper(*temp) == 256)
+        {
+            count_letter[Case(*temp)+25]++;
+        }
+        if(isupper(*temp) == 0)
+        {
+            count_letter[Case(*temp)-1]++;
+        }
+        temp++;
+    }
+    int k=0;
+    k++;
+    /////////////////////////////////////
+    bool res =true;
+    for (int i = 0; i < strlen(txt_copy)-strlen(word_copy); i++)
+    {  
+        if(Case(txt_copy[i])!=0)
+        {
+            res=true;
+            for(int i =0;i<52;i++)
+            {
+                count_letter_temp[i]=0;
+            }
+            for(int j = i; j < i + strlen(word_copy); j++)
+            {
+                if(Case(txt_copy[j]) != 0)
+                {
+                    if(isupper(txt_copy[j]) == 256)
+                    {
+                        count_letter_temp[Case(txt_copy[j])+25]++;
+                    }
+                    if(isupper(txt_copy[j]) == 0)
+                    {
+                        count_letter_temp[Case(txt_copy[j])-1]++;
+                    }
+                }
+            }
+            for(int j =0 ;j < 52;j++)
+            {
+                if(count_letter[j] != count_letter_temp[j])
+                {
+                    res =false;
+                    break;
+                }
+            }
+            if(res)
+            {
+                for(int j = i ;j < i + strlen(word_copy);j++)
+                {
+                    toPrint[index]=txt_copy[j];
+                    index++;
+                }
+                toPrint[index]='~';
+                index++;
+            }
+        }
     }
     toPrint[index]='\0';
     printf("%s\n",toPrint);

@@ -42,5 +42,6 @@ int main()
    txt[i]='\0';
 
    // WordGimatry(word,txt,strlen(word),strlen(txt));
-   atbash(word,txt,strlen(word),strlen(txt));
+   // atbash(word,txt,strlen(word),strlen(txt));
+   permetation(word,txt,strlen(word),strlen(txt));
 }

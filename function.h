@@ -5,4 +5,5 @@
 #include <math.h>
 void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt);
 void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt);
+void permetation(char *word , char *txt,int sizeOfWord,int sizeOfTxt);
 #endif
