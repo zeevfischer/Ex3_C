@@ -249,6 +249,12 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         }
         temp++;
     }
+    //////////////////////////////////////
+    // for(int i=0;i<52;i++)
+    // {
+    //     printf("%d ",count_letter[i]);
+    // }
+    // printf("\n");
     int poksd=0;
     poksd++;
     /////////////////////////////////////
@@ -277,6 +283,11 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                     }
                 }
             }
+            // for(int i=0;i<52;i++)
+            // {
+            //     printf("%d ",count_letter_temp[i]);
+            // }
+            // printf("\n");
             // check
             for(int j =0 ;j < 52;j++)
             {
