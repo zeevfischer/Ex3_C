@@ -93,7 +93,7 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         index = last;
     }
-    toPrint[index]='\0';
+    toPrint[index-1]='\0';
     printf("%s \n",toPrint);
 }
 void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt) 
@@ -188,7 +188,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         try=false;
 
     }
-    toPrint[index]='\0';
+    toPrint[index-1]='\0';
     printf("%s\n",toPrint);
 }
 // isupper('A')==256
@@ -284,6 +284,6 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
         }
     }
-    toPrint[index] = '\0';
+    toPrint[index-1] = '\0';
     printf("%s\n",toPrint);
 }
