@@ -79,8 +79,8 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
             if(count > sum)
             {
-                count = 0;
-                index = last;
+                // count = 0;
+                // index = last;
                 break;
             }
         }
@@ -93,13 +93,13 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         index = last;
     }
-    if(toPrint[index-1]=='~')
+    if(toPrint[index-2]=='~')
     {
-        toPrint[index-1]='\0';
+        toPrint[index-2]='\0';
     }
     else
     {
-        toPrint[index]='\0';
+        toPrint[index-1]='\0';
     }
     printf("%s \n",toPrint);
 }
