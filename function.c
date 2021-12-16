@@ -259,7 +259,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     poksd++;
     /////////////////////////////////////
     bool res =true;
-    for (int i = 0; i < strlen(txt_copy)-strlen(word_copy); i++)
+    for (int i = 0; i < strlen(txt_copy)-strlen(word_copy)+1; i++)
     {  
         if(Case(txt_copy[i])!=0)
         {
