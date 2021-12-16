@@ -40,7 +40,7 @@ int main()
       scanf ("%c" , &temp);
    }
    txt[i]='\0';
-
+   
    printf("Gematria Sequences: ");
    WordGimatry(word,txt,strlen(word),strlen(txt));
    printf("Atbash Sequences: ");

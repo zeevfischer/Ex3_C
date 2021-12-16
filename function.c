@@ -74,13 +74,10 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 toPrint[index]='~';
                 index++;
                 last = index;
-                // count = 0;
                 break;
             }
             if(count > sum)
             {
-                // count = 0;
-                // index = last;
                 break;
             }
         }
@@ -105,6 +102,7 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
 }
 void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt) 
 {
+    // reset aToz && revers
     char *temp = word;
     char aToz[sizeOfWord];
     char revers[sizeOfWord];
@@ -124,10 +122,8 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     }
     aToz[sizeOfWord]='\0';
     revers[sizeOfWord]='\0';
-    // printf("%s\n",aToz);
-    // printf("%s\n",revers);
-    // printf("%d\n",isupper('a'));
-    // printf("%d\n",isupper('B'));
+
+    // starting to print and running over text
     char toPrint[1024];
     temp = txt;
     int index = 0;
@@ -135,6 +131,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     bool try =false;
     for(int i = 0; i < sizeOfTxt; i++)
     {
+        //this will look for aToz
         for(int j = 0; j < sizeOfWord; j++)
         {
             if(*temp == aToz[j])
@@ -162,6 +159,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 try=false;
             }
         }
+        //this will look for revers
         for(int j2 = 0; j2 < sizeOfWord; j2++)
         {
             if(*temp == revers[j2])
@@ -208,6 +206,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
 // isupper('A')==256
 void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
 {
+    //restarting txt and word copy
     char toPrint[1024];
     int index;
     char txt_copy[sizeOfTxt+1];
@@ -228,6 +227,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     word_copy[sizeOfWord]='\0';
     //location = Case(char) upper case is after lower so a=0 A=26
     // value amount
+    //restarting count letter and a temp to run on 
     temp=word;
     int count_letter[52];
     int count_letter_temp[52];
@@ -236,7 +236,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         count_letter[i]=0;
         count_letter_temp[i]=0;
     }
-    //////////////////////////////
+    // inputing count letter witch is the index of the word in the arr
     for (int i = 0; i < sizeOfWord; i++)
     {
         if(isupper(*temp) == 256)
@@ -249,15 +249,11 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         }
         temp++;
     }
-    //////////////////////////////////////
-    // for(int i=0;i<52;i++)
-    // {
-    //     printf("%d ",count_letter[i]);
-    // }
-    // printf("\n");
-    int poksd=0;
-    poksd++;
+    ///////////////////////////////////// this peac of code is redundent but will not work without it 
+    int poksdpech=0;
+    poksdpech++;
     /////////////////////////////////////
+    // running on text
     bool res =true;
     for (int i = 0; i < strlen(txt_copy)-strlen(word_copy)+1; i++)
     {  
@@ -283,11 +279,6 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                     }
                 }
             }
-            // for(int i=0;i<52;i++)
-            // {
-            //     printf("%d ",count_letter_temp[i]);
-            // }
-            // printf("\n");
             // check
             for(int j =0 ;j < 52;j++)
             {
@@ -318,5 +309,5 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         toPrint[index]='\0';
     }
-    printf("%s",toPrint);
+    printf("%s\n",toPrint);
 }
