@@ -54,7 +54,7 @@ def test_output_vs_expected(prog , input_f , expected_f):
         passed = 0
         run_cmd("cat tmp_out.txt")
         run_cmd("cat " + expected_f )
-    # run_cmd("rm tmp_out.txt" , 0)
+    run_cmd("rm tmp_out.txt" , 0)
 
 def main():
     git_rep , ids,  commit = pars_input()
@@ -85,10 +85,10 @@ def main():
     print("running tests")   
     
     test_output_vs_expected("stringProg" , "../input/input.txt" , "../output/output.txt")
-    # test_output_vs_expected("stringProg" , "../input/input1.txt" , "../output/output1.txt")
-    # test_output_vs_expected("stringProg" , "../input/input2.txt" , "../output/output2.txt")
-    # test_output_vs_expected("stringProg" , "../input/input3.txt" , "../output/output3.txt")
-    # test_output_vs_expected("stringProg" , "../input/input4.txt" , "../output/output4.txt")
+    test_output_vs_expected("stringProg" , "../input/input1.txt" , "../output/output1.txt")
+    test_output_vs_expected("stringProg" , "../input/input2.txt" , "../output/output2.txt")
+    test_output_vs_expected("stringProg" , "../input/input3.txt" , "../output/output3.txt")
+    test_output_vs_expected("stringProg" , "../input/input4.txt" , "../output/output4.txt")
 
     if passed == 1:
         print("You have PASSED the initial checks.")
