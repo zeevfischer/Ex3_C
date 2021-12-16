@@ -318,5 +318,5 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         toPrint[index]='\0';
     }
-    printf("%s\n",toPrint);
+    printf("%s",toPrint);
 }
