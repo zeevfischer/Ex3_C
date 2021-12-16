@@ -309,6 +309,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
         }
     }
+    
     if(toPrint[index-1]=='~')
     {
         toPrint[index-1]='\0';
