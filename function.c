@@ -93,15 +93,15 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         index = last;
     }
-    if(toPrint[index-2]=='~')
-    {
-        toPrint[index-2]='\0';
-    }
-    else
+    if(toPrint[index-1]=='~')
     {
         toPrint[index-1]='\0';
     }
-    printf("%s \n",toPrint);
+    else
+    {
+        toPrint[index]='\0';
+    }
+    printf("%s\n",toPrint);
 }
 void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt) 
 {
