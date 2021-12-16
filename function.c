@@ -235,8 +235,8 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         }
         temp++;
     }
-    int kklsed=0;
-    kklsed++;
+    int poksd=0;
+    poksd++;
     /////////////////////////////////////
     bool res =true;
     for (int i = 0; i < strlen(txt_copy)-strlen(word_copy); i++)
