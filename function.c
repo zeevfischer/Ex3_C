@@ -304,7 +304,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                     toPrint[index]=txt_copy[j];
                     index++;
                 }
-                toPrint[index]='*';
+                toPrint[index]='~';
                 index++;
             }
         }
