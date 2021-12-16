@@ -79,8 +79,8 @@ void WordGimatry(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
             if(count > sum)
             {
-                // count = 0;
-                // index = last;
+                count = 0;
+                index = last;
                 break;
             }
         }
@@ -309,7 +309,7 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
             }
         }
     }
-    
+
     if(toPrint[index-1]=='~')
     {
         toPrint[index-1]='\0';
