@@ -1,8 +1,8 @@
-cc=gcc
+cc=c99-gcc
 AR=ar
 OBJECTS_MAIN=main.o
 OBJECTS_LIB1=function.o
-FLAGS= -Wall -g
+FLAGS= -Wall -g -std=c99
 
 all: stringProg
 # main
