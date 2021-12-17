@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "function.h"
 #include <math.h>
 #include <stdbool.h>
@@ -250,8 +251,8 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         temp++;
     }
     ///////////////////////////////////// this peac of code is redundent but will not work without it 
-    int poksdpech=0;
-    poksdpech++;
+    int xx=0;
+    xx++;
     /////////////////////////////////////
     // running on text
     bool res =true;

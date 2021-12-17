@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <string.h>
 #include "function.h"
@@ -47,4 +48,5 @@ int main()
    atbash(word,txt,strlen(word),strlen(txt));
    printf("Anagram Sequences: ");
    permetation(word,txt,strlen(word),strlen(txt));
+   return 0;
 }
