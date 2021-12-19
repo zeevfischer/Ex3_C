@@ -132,15 +132,28 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     bool try =false;
     for(int i = 0; i < sizeOfTxt; i++)
     {
+        
         //this will look for aToz
-        for(int j = 0; j < sizeOfWord; j++)
+        int j=0;
+        // for(int j = 0; j < sizeOfWord; j++)
+        while(j != sizeOfWord)
         {
-            if(*temp == aToz[j])
-            {
+            // printf("%d\n",sizeOfWord);
+            // printf("temp = %c\n", *temp);
+            // printf(" j = %d\n",j);
+            // printf("%c\n",aToz[3]);
+            // printf("j= %d, temp = %c, aToz = %c\n",j,*temp,aToz[j]);
+            if(*temp == aToz[j] || *temp == ' ')
+            {   
+                if(*temp != ' ')
+                {
+                    j++;
+                }
                 toPrint[index] = *temp;
                 index++;
                 temp++;
                 try =true;
+                // printf("j= %d, temp = %c, aToz = %c\n",j,*temp,aToz[j]);
             }
             else
             {
@@ -152,19 +165,26 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 index=last;
                 break;
             }
-            if(j == sizeOfWord-1)
+            if(j == sizeOfWord)
             {
                 toPrint[index]='~';
                 index++;
                 last = index;
                 try=false;
+                break;
             }
         }
         //this will look for revers
-        for(int j2 = 0; j2 < sizeOfWord; j2++)
+        j = 0;
+        // for(int j2 = 0; j2 < sizeOfWord; j2++)
+        while(j!= sizeOfWord)
         {
-            if(*temp == revers[j2])
+            if(*temp == revers[j] || *temp == ' ')
             {
+                if(*temp != ' ')
+                {
+                    j++;
+                }
                 toPrint[index] = *temp;
                 index++;
                 temp++;
@@ -180,7 +200,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
                 index=last;
                 break;
             }
-            if(j2 == sizeOfWord-1)
+            if(j == sizeOfWord)
             {
                 toPrint[index]='~';
                 index++;
@@ -310,5 +330,5 @@ void permetation (char *word , char *txt,int sizeOfWord,int sizeOfTxt)
     {
         toPrint[index]='\0';
     }
-    printf("%s",toPrint);
+    printf("%s\n",toPrint);
 }
