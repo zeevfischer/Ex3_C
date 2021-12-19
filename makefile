@@ -1,4 +1,4 @@
-cc=c99-gcc
+cc=gcc
 AR=ar
 OBJECTS_MAIN=main.o
 OBJECTS_LIB1=function.o
