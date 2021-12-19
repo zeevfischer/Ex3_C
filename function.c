@@ -135,7 +135,7 @@ void atbash(char *word , char *txt,int sizeOfWord,int sizeOfTxt)
         //this will look for aToz
         for(int j = 0; j < sizeOfWord; j++)
         {
-            if(*temp == aToz[j])
+            if(*temp == aToz[j] || *temp=' ')
             {
                 toPrint[index] = *temp;
                 index++;
